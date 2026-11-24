@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ёлки &amp; Иголки — бронирование загородных домов</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <span class="brand__logo">🌲</span>
+        <div>
+          <h1 class="brand__title">Ёлки &amp; Иголки</h1>
+          <p class="brand__subtitle">Яркий загородный отдых у лесного озера</p>
+        </div>
+      </div>
+
+      <div class="header__actions">
+        <div class="header__stats" id="headerStats">Свободно домов: 6 из 8</div>
+        <button type="button" class="btn btn-header-reset" id="resetDemoBtn">
+          Сбросить демо
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main-layout">
+    <div id="storageAlertBox" aria-live="polite"></div>
+
+    <section class="filters panel">
+      <div class="filter-item">
+        <label for="filterGuests">Число гостей (от)</label>
+        <select id="filterGuests">
+          <option value="1">От 1 гостя</option>
+          <option value="2">От 2 гостей</option>
+          <option value="4">От 4 гостей</option>
+          <option value="6">От 6 гостей</option>
+          <option value="8">От 8 гостей</option>
+        </select>
+      </div>
+
+      <div class="filter-item">
+        <label for="filterPrice">Макс. цена: <span id="priceValue">25 000</span> ₽ / ночь</label>
+        <input type="range" id="filterPrice" min="7000" max="25000" step="500" value="25000" />
+      </div>
+
+      <label class="checkbox-item">
+        <input type="checkbox" id="filterOnlyFree" />
+        <span>Только свободные</span>
+      </label>
+
+      <button type="button" class="btn btn-light" id="resetFiltersBtn">Сбросить фильтры</button>
+    </section>
+
+    <section class="top-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Схема посёлка</h2>
+          <div class="legend">
+            <span><i class="dot dot-free"></i>Свободен</span>
+            <span><i class="dot dot-selected"></i>Выбран</span>
+            <span><i class="dot dot-busy"></i>Занят</span>
+          </div>
+        </div>
+        <div class="map-box" id="villageMapContainer"></div>
+      </div>
+
+      <aside class="panel details-box" id="houseDetailsPanel"></aside>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <h2>Список домов</h2>
+        <span class="muted" id="housesCountLabel">Показано: 8 из 8</span>
+      </div>
+      <div id="filterNoticeBox"></div>
+      <div class="cards-grid" id="housesList"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <div class="section-head__left">
+          <h2>Мои брони</h2>
+          <span class="demo-tag">Учебное демо, реальная бронь не оформляется</span>
+        </div>
+        <span class="counter-pill" id="bookingsCountBadge">0</span>
+      </div>
+      <div class="bookings-grid" id="myBookingsList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Загородный клуб «Ёлки &amp; Иголки» · <strong>Учебное демо, реальная бронь не оформляется</strong></p>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+
+
